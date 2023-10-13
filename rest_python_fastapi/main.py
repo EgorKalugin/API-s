@@ -6,7 +6,7 @@ app = FastAPI()
 
 # Обработчик GET-запросов на корневой URL
 @app.get("/")
-async def root_get_handler():
+def root_get_handler():
     # Возвращает JSON-объект с сообщением
     return {"message": "Hello, World!"}
 
@@ -14,7 +14,7 @@ async def root_get_handler():
 # Обработчик POST-запросов на корневой URL
 # Принимает JSON-данные в теле запроса
 @app.post("/")
-async def root_post_handler(body: Optional[Any] = Body(default=None)):
+def root_post_handler(body: Optional[Any] = Body(default=None)):
     # Выводит в консоль данные, полученные в теле запроса
     print(body)
     # Возвращает JSON-объект с сообщением
